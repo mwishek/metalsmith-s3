@@ -1,0 +1,39 @@
+{
+  "name": "metalsmith-s3read",
+  "version": "0.0.1",
+  "description": "A Metalsmith.io plugin to integrate and pull in content from AWS S3",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mwishek/metalsmith-s3read"
+  },
+  "keywords": [
+    "package",
+    "Metalsmith.io",
+    "Amazon S3"
+  ],
+  "author": "Matthew Wishek",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mwishek/metalsmith-s3read/issues"
+  },
+  "homepage": "https://github.com/mwishek/metalsmith-s3read",
+  "dependencies": {
+    "async": "^0.9.0",
+    "aws-sdk": "",
+    "debug": "^1.0.4",
+    "front-matter": "^0.2.1",
+    "rsvp": "^3.0.16",
+    "underscore": "^1.6.0"
+  },
+  "devDependencies": {
+    "assert-dir-equal": "0.0.1",
+    "handlebars": "^2.0.0-alpha.4",
+    "metalsmith": "^0.9.0",
+    "metalsmith-templates": "^0.5.2",
+    "mocha": "^1.21.3"
+  }
+}
