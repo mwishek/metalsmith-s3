@@ -1,7 +1,7 @@
 {
   "name": "metalsmith-s3",
   "version": "0.0.1",
-  "description": "A Metalsmith.io plugin to integrate and pull in content from AWS S3",
+  "description": "A Metalsmith.io plugin to integrate with AWS S3",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
