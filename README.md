@@ -1,2 +1,2 @@
 # metalsmith-s3
-Metalsmith plugin for reading/write/copying files on AWS S3.
+Metalsmith plugin for reading/writing/copying files on AWS S3.
