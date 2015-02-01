@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-s3",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Metalsmith.io plugin to integrate with AWS S3",
   "main": "lib/index.js",
   "scripts": {
@@ -30,7 +30,6 @@
     "front-matter": "^0.2.1",
     "mime": "^1.2.11",
     "mime-types": "^2.0.7",
-    "rsvp": "^3.0.16",
     "underscore": "^1.6.0"
   },
   "devDependencies": {
