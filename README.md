@@ -5,7 +5,7 @@ Example usage: [nonLinear.zone build process](https://github.com/mwishek/nonline
 
 # Installation
 ```
-$ npm install metalsmith`
+$ npm install metalsmith
 ```
 
 # Usage
