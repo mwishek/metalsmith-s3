@@ -60,6 +60,24 @@ The _write_ action will write all files to the destination S3 bucket.
 
 bucket: destination S3 bucket
 
+# Credentials configuration
+
+### Via environment variables
+```
+export AWS_ACCESS_KEY_ID='your_access_key'
+export AWS_SECRET_ACCESS_KEY='your_secret_key'
+```
+
+### Via configuration file
+
+Create a credentials file at `~/.aws/credentials` on Mac/Linux or `C:\Users\USERNAME\.aws\credentials` on Windows
+
+```
+[default]
+aws_access_key_id = your_access_key
+aws_secret_access_key = your_secret_key
+```
+
 # TODO
 1. Test suite
 
