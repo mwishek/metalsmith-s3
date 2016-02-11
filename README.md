@@ -32,6 +32,19 @@ var metalsmith = new Metalsmith(__dirname)
   }));
 ```
 
+In case you face the following error, just add the optional parameter *region* :  
+``` TypeError: Error: PermanentRedirect: The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint.```  
+
+Applicable regions are listed in [aws documentation](http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region).  
+Usage example:
+``` javascript
+.use(s3({
+  action: 'write',
+  bucket: 's3-bucket-dest',
+  region: 'eu-west-1'
+}));
+```
+
 # Actions
 ### Read
 
@@ -41,6 +54,7 @@ The _read_ action will read files from an S3 bucket which can then be processed 
 
 bucket: source S3 bucket  
 ignore: a prefix or array of prefixes _not_ to be read from the source S3 bucket  
+region: bucket's endpoint region (optional)
 
 ### Copy
 
@@ -51,6 +65,7 @@ The _copy_ action will copy files from a source S3 bucket to a destination S3 bu
 bucket: destination S3 bucket  
 from: source S3 bucket  
 prefix: a prefix or array of prefixes to be copied from the source S3 bucket  
+region: bucket's endpoint region (optional)
 
 ### Write
 
@@ -58,7 +73,8 @@ The _write_ action will write all files to the destination S3 bucket.
 
 #### Write Parameters
 
-bucket: destination S3 bucket
+bucket: destination S3 bucket  
+region: bucket's endpoint region (optional)
 
 # Credentials configuration
 
