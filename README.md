@@ -11,7 +11,7 @@ $ npm install metalsmith-s3
 # Usage
 ```node
 var Metalsmith = require('metalsmith');
-var permalinks = require('metalsmith-s3');
+var s3 = require('metalsmith-s3');
 
 var metalsmith = new Metalsmith(__dirname)
   .use(s3({
