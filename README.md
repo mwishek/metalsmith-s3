@@ -31,7 +31,7 @@ var metalsmith = new Metalsmith(__dirname)
     bucket: 's3-bucket-dest'
   }));
 ```
-###S3 Library Pass Through
+### S3 Library Pass Through
 You can pass through additional settings directly to the s3 library by adding an `s3` key and hash.
 Properties available vary based on the chosen action:
   - [read](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#getObject-property)
@@ -54,7 +54,7 @@ var metalsmith = new Metalsmith(__dirname)
   }));
 ```
 
-###Region Override
+### Region Override
 In case you face the following error, just add the optional parameter *region* :  
 ``` TypeError: Error: PermanentRedirect: The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint.```  
 
