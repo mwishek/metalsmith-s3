@@ -31,7 +31,30 @@ var metalsmith = new Metalsmith(__dirname)
     bucket: 's3-bucket-dest'
   }));
 ```
+###S3 Library Pass Through
+You can pass through additional settings directly to the s3 library by adding an `s3` key and hash.
+Properties available vary based on the chosen action:
+  - [read](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#getObject-property)
+  - [copy](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#copyObject-property)
+  - [write](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#putObject-property)
 
+Example to set the ACL for files written to s3:
+```node
+var Metalsmith = require('metalsmith');
+var s3 = require('metalsmith-s3');
+
+var metalsmith = new Metalsmith(__dirname)
+  ...
+  .use(s3({
+    action: 'write',
+    bucket: 's3-bucket-dest'
+    s3: {
+      ACL: 'public-read'
+    }
+  }));
+```
+
+###Region Override
 In case you face the following error, just add the optional parameter *region* :  
 ``` TypeError: Error: PermanentRedirect: The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint.```  
 
@@ -75,6 +98,14 @@ The _write_ action will write all files to the destination S3 bucket.
 
 bucket: destination S3 bucket  
 region: bucket's endpoint region (optional)
+
+#### Mime Types
+
+Uploaded file's mime type will be set by:
+
+ * `mimeType` property in the file's meta, if set
+ * type determined by [mime-type](https://www.npmjs.com/package/mime-types)'s inspection of the file name
+ * undefined (interpreted as `application/octet-stream` by S3)
 
 # Credentials configuration
 
