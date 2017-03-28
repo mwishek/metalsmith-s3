@@ -76,6 +76,14 @@ The _write_ action will write all files to the destination S3 bucket.
 bucket: destination S3 bucket  
 region: bucket's endpoint region (optional)
 
+#### Mime Types
+
+Uploaded file's mime type will be set by:
+
+ * `mimeType` property in the file's meta, if set
+ * type determined by [mime-type](https://www.npmjs.com/package/mime-types)'s inspection of the file name
+ * undefined (interpreted as `application/octet-stream` by S3)
+
 # Credentials configuration
 
 ### Via environment variables
