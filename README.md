@@ -54,6 +54,18 @@ var metalsmith = new Metalsmith(__dirname)
   }));
 ```
 
+If file metadata has an `s3` key, it is mixed in as well.
+That allows overriding properties on a per-file basis.
+
+Example setting ACL for specific file in front-matter:
+```md
+---
+title: My Article
+s3:
+  ACL: private
+---
+```
+
 ### Region Override
 In case you face the following error, just add the optional parameter *region* :  
 ``` TypeError: Error: PermanentRedirect: The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint.```  
